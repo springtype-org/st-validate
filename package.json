@@ -1,0 +1,35 @@
+{
+  "name": "st-validate",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A validation framework.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/springtype-org/st-validate.git"
+  },
+  "scripts": {
+    "clean": "npx st-rm-rf dist",
+    "prebuild": "yarn clean",
+    "build": "tsc",
+    "postbuild": "npx st-cp package.json .npmignore README.md LICENSE dist",
+    "watch": "tsc -w",
+
+    "test": "jest --verbose --watch",
+    "test:ci": "jest --verbose --runInBand",
+
+    "coverage": "jest --verbose --coverage",
+    "coverage:ci": "jest --verbose --coverage --runInBand"
+  },
+  "author": "Aron Homberg <info@aron-homberg.de>, Michael Mannseicher <m.mansi1@gmx.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.2",
+    "jest": "^25.4.0",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  }
+}
