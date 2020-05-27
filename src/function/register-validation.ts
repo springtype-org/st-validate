@@ -1,8 +1,8 @@
-import { IValidator } from "../interface/ivalidator";
+import { IValidator } from "../interface/i-validator";
 import { VALIDATOR_DEFAULT, VALIDATION_DECORATOR_METADATA_KEY } from "..";
-import { IValidationRegistration } from "../interface/ivalidation-registration";
+import { IValidationRegistration } from "../interface/i-validation-registration";
 import { getDecoratorParamNames } from "./get-decorator-param-names";
-import { ValidationResult } from "../interface/ivalidation-result";
+import { IValidationResult } from "../interface/i-validation-result";
 
 export const registerValidation = (validator: IValidator = VALIDATOR_DEFAULT) =>
     (prototype: any, methodName: string, descriptor: TypedPropertyDescriptor<any>) => {
@@ -14,7 +14,7 @@ export const registerValidation = (validator: IValidator = VALIDATOR_DEFAULT) =>
         descriptor.value = function() {
 
             const validationRegistrations: Array<IValidationRegistration> = prototype[VALIDATION_DECORATOR_METADATA_KEY][methodName] || [];
-            const errors: Array<ValidationResult> = [];
+            const errors: Array<IValidationResult> = [];
 
             for (const validationRegistration of validationRegistrations) {
 

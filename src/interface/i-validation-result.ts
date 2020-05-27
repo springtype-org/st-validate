@@ -1,4 +1,4 @@
-export interface ValidationResult {
+export interface IValidationResult {
   argumentName: string;
   index: number;
   input: any;

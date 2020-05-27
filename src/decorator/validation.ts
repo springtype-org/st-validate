@@ -1,6 +1,6 @@
-import { IValidator } from "../interface/ivalidator";
+import { IValidator } from "../interface/i-validator";
 import { VALIDATOR_DEFAULT, VALIDATION_DECORATOR_METADATA_KEY } from "..";
-import { registerValidation } from "../function/register-validation";
+import {registerValidation} from "../function/register-validation";
 
 export const validation = (validator: IValidator = VALIDATOR_DEFAULT) =>
     <T extends { new(...args: any[]): {} }>(ctor: T) => {

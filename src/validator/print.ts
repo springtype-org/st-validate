@@ -1,14 +1,14 @@
-import {IValidator} from "../interface/ivalidator";
+import {IValidator} from "../interface/i-validator";
 
-import {ValidationResult} from "../interface/ivalidation-result";
-
+import {IValidationResult} from "../interface/i-validation-result";
 import {getValidationErrorMessage} from "../function/get-validation-error-message";
+
 
 export class PrintValidator implements IValidator {
     constructor(private error: (message?: any, ...optionalParams: any[]) => void) {
     }
 
-    validate(errors: Array<ValidationResult>): void {
+    validate(errors: Array<IValidationResult>): void {
         this.error(errors.map(getValidationErrorMessage).join(' '))
     }
 }

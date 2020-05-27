@@ -1,7 +1,7 @@
-import { ValidateFunction } from "./validate-function";
+import { IValidateFunction } from "./i-validate-function";
 
 export interface IValidationRegistration {
   parameterIndex: number;
-  validateFn: ValidateFunction;
+  validateFn: IValidateFunction;
   validatorName: string;
 }

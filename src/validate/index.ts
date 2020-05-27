@@ -12,3 +12,5 @@ export * from "./lowercase";
 export * from "./number";
 export * from "./special";
 export * from "./uppercase";
+export * from "./min";
+export * from "./max";
